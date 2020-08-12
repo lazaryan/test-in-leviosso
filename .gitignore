@@ -1,11 +1,11 @@
 *
 
 !ui
-!ui/*
+!ui/**
 !app
-!app/*
+!app/**
 !common
-!common/*
+!common/**
 
 !.gitignore
 !.eslintrc
