@@ -1,28 +1,28 @@
 import axios from 'axios'
 
 export class API {
-	read({ url, searchCriteria, type, dispatch }) {
+	read({ url, searchCriteria, actionType, dispatch }) {
 		return this.handleResponse(axios.get(
 			searchCriteria ? this.applySearchCriteria(url, searchCriteria) : url
-		), type, dispatch)
+		), actionType, dispatch)
 	}
 
-	update({ url, payload, type, dispatch }) {
-		return this.handleResponse(axios.put(url, payload), type, dispatch)
+	update({ url, payload, actionType, dispatch }) {
+		return this.handleResponse(axios.put(url, payload), actionType, dispatch)
 	}
 
-	create({ url, payload, type, dispatch }) {
-		return this.handleResponse(axios.post(url, payload), type, dispatch)
+	create({ url, payload, actionType, dispatch }) {
+		return this.handleResponse(axios.post(url, payload), actionType, dispatch)
 	}
 
-	delete({ url, payload, type, dispatch }) {
-		return this.handleResponse(axios.delete(url, payload), type, dispatch)
+	delete({ url, payload, actionType, dispatch }) {
+		return this.handleResponse(axios.delete(url, payload), actionType, dispatch)
 	}
 
-	handleResponse(request, type, dispatch) {
-		return type && dispatch ?
+	handleResponse(request, actionType, dispatch) {
+		return actionType && dispatch ?
 			request
-				.then(response => dispatch({type, payload: response.data}))
+				.then(response => dispatch({ type: actionType, payload: response.data }))
 				.catch(console.error) :
 			request
 	}
@@ -31,5 +31,9 @@ export class API {
 		return url.concat('?' +
 			Object.entries(searchCriteria)
 				.map(([criteria, value]) => `${criteria}=${value}&`))
+	}
+
+	updateToken() {
+		axios.defaults.headers.common['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzEiLCJleHAiOjE2MDM3ODM0Mzd9.3ievseHtX0t3roGh7nBuNsiaQeSjfiHWyyx_5GlOLXk'
 	}
 }
