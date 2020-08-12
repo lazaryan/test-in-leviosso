@@ -5,7 +5,7 @@ export default {
     },
     bg: {
         main: '#fafafa',
-        blue: '#56C9EB',
-        green: '#4AAF77'
+        accent: '#56C9EB',
+        common: '#4AAF77'
     }
 }
