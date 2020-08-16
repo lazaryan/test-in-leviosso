@@ -10,6 +10,7 @@
 !.gitignore
 !.eslintrc
 !babel.config.js
+!tsconfig.json
 !package.json
 !webpack.config.js
 !README.md

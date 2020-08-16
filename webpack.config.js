@@ -76,14 +76,19 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: ['babel-loader', 'eslint-loader']
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'ts-loader', 'eslint-loader']
             }
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx'],
+        extensions: ['*', '.ts', '.tsx', '.js', '.jsx'],
         alias: {
             ui: path.resolve('./ui/index.js'),
-            theme: path.resolve('./ui/theme/index.js'),
+            theme: path.resolve('./ui/theme/index.ts'),
             utils: path.resolve(`${commonPath}/utils.js`)
         }
     },

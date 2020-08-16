@@ -23,6 +23,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@babel/plugin-transform-runtime": "^7.11.0",
+    "@types/styled-components": "^5.1.2",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "body-parser": "^1.19.0",
     "circular-dependency-plugin": "^5.2.0",
@@ -41,6 +42,7 @@
     "pug-as-jsx-loader": "^1.0.88",
     "react-hot-loader": "^4.12.21",
     "sinon": "^9.0.3",
+    "ts-loader": "^8.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
@@ -70,6 +72,7 @@
     "reflexbox": "^4.0.6",
     "reset-css": "^5.0.1",
     "styled-components": "^5.1.1",
+    "typescript": "^3.9.7",
     "uuid": "^8.3.0",
     "yargs": "^15.4.1"
   }

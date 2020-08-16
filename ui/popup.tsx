@@ -1,9 +1,23 @@
+import React from 'react'
+
 import { useRef, forwardRef } from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 import { Flex } from 'reflexbox'
 
-export const Component = props => {
+import { Theme } from 'theme'
+
+export interface Props extends React.PropsWithChildren<any> {
+    onClickOutside?: Function,
+    theme: Theme,
+    'data-testid'?: string
+}
+
+export interface OverlayProps extends Props {
+    children: Element | React.ReactNode,
+    onClick: Function
+}
+
+export const Component = (props: Props) => {
     const overlayRef = useRef(null)
 
     const handleClickOutside = event =>
@@ -16,11 +30,7 @@ export const Component = props => {
     )
 }
 
-Component.propTypes = {
-    onClickOutside: PropTypes.func
-}
-
-export const Overlay = styled(forwardRef((props, ref) => <Flex {...props} ref={ref}/>))`${props => props.theme.popup.overlay}`
+export const Overlay = styled(forwardRef((props: OverlayProps, ref) => <Flex {...props} ref={ref}/>))`${props => props.theme.popup.overlay}`
 export const Container = styled(Flex)`${props => props.theme.popup.container}`
 
 export const Header = props => <Flex alignItems="center" {...props} />
