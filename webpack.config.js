@@ -81,20 +81,21 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: ['babel-loader', 'ts-loader', 'eslint-loader']
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },
     resolve: {
         extensions: ['*', '.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            ui: path.resolve('./ui/index.js'),
+            ui: path.resolve('./ui/index.ts'),
             theme: path.resolve('./ui/theme/index.ts'),
-            utils: path.resolve(`${commonPath}/utils.js`)
+            utils: path.resolve(`${commonPath}/utils.js`),
+            'theme/types': path.resolve('./ui/theme/theme.d.ts')
         }
-    },
-    externals: hot && {} || {
-        'react': 'react',
-        'react-dom' : 'reactDOM'
     },
     devServer: {
         contentBase: './dist',

@@ -39,10 +39,15 @@ export const button = css`
     `}
 `
 
+export const prefix = css`
+
+`
+
 export const styles = {
     default: {
         container,
-        button
+        button,
+        prefix
     },
     accent: {
         container,
@@ -50,7 +55,8 @@ export const styles = {
             ${button}
 
             background: ${props => props.theme.colors.bg.accent};
-        `
+        `,
+        prefix
     }
 }
 

@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from 'theme'
 import { API } from 'utils'
 import { getState } from './actions'
+import { Button } from 'ui'
 
 export const App = () => {
     const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export const App = () => {
 
     console.log(state)
 
-    return (<>Test</>)
+    return (<><Button type="shop">AAAAA</Button></>)
 }
 
 export const Component = () => (<ThemeProvider theme={theme}><App /></ThemeProvider>)

@@ -4,15 +4,14 @@ import { useRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { Flex } from 'reflexbox'
 
-import { Theme } from 'theme'
+import { Popup as PopupInterface } from 'theme/types'
+import { Props as DefaultProps } from './types'
 
-export interface Props extends React.PropsWithChildren<any> {
+export type Props = DefaultProps<PopupInterface> & {
     onClickOutside?: Function,
-    theme: Theme,
-    'data-testid'?: string
 }
 
-export interface OverlayProps extends Props {
+export type OverlayProps = Props & {
     children: Element | React.ReactNode,
     onClick: Function
 }

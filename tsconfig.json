@@ -6,7 +6,9 @@
         "esModuleInterop": true,
         "paths": {
             "theme": ["./ui/theme/index.ts"],
+            "theme/types": ["./ui/theme/theme.d.ts"],
             "utils": ["./common/utils.js"],
+            "ui": ["./ui/index.ts"]
         }
     },
     "exclude": ["node_modules", "**/*.spec.ts"]

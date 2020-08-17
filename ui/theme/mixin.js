@@ -20,3 +20,9 @@ export const fade = css`
         opacity: 0;
     }
 `
+
+export const icons = {
+    dark: {
+        shop: `data:image/svg+xml;utf8;base64,${window.btoa(require('./icons/shop.svg'))}`
+    }
+}
