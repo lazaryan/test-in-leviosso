@@ -1,6 +1,4 @@
-import React from 'react'
-
-import { useRef, forwardRef } from 'react'
+import React, { useRef, forwardRef } from 'react'
 import styled from 'styled-components'
 import { Flex } from 'reflexbox'
 

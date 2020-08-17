@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from 'theme'
 import { API } from 'utils'
 import { getState } from './actions'
-import { Button } from 'ui'
+import { Button, Text, Checkbox, Radio, Image } from 'ui'
 
 export const App = () => {
     const dispatch = useDispatch()
@@ -22,7 +22,14 @@ export const App = () => {
 
     console.log(state)
 
-    return (<><Button type="shop">AAAAA</Button></>)
+    return (
+        <>
+            <Text>BBBBB</Text>
+            <Checkbox name="test" value="1" />
+            <Radio name="test" value="3" />
+            <Image />
+        </>
+    )
 }
 
 export const Component = () => (<ThemeProvider theme={theme}><App /></ThemeProvider>)

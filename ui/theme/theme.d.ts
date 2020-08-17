@@ -4,7 +4,11 @@ export type Button = {
     container: Style,
     button: Style,
     prefix: Style
-}  
+}
+
+export type Checkbox = {
+    toggle: Style
+}
 
 export type Popup = {
     overlay: Style,
@@ -20,7 +24,18 @@ export type Colors = {
     bg: Object
 }
 
+export type Radio = {
+    toggle: Style
+}
+
+export type Text = Style
+
 export type Icon = Style
+
+export type Image = {
+    container: Style,
+    image: Style
+}
 
 interface MixinIcon {
     [propName: string]: {
@@ -35,8 +50,12 @@ export type Mixin = {
 }
 
 export type Theme = {
-    Button,
-    Popup,
-    Icon,
-    Mixin
+    Button: Button,
+    Checkbox: Checkbox,
+    Popup: Popup,
+    Icon: Icon,
+    Radio: Radio,
+    Text: Text,
+    Image: Image,
+    Mixin: Mixin
 }

@@ -5,7 +5,4 @@ export default css`
 	width: 2rem;
 	height: 2rem;
 	${props => props.theme.mixin.transition}
-	${props => !props.currentSort && css`
-		opacity: 0.5;
-	`}
 `
